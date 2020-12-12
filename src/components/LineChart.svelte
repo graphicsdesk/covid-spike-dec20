@@ -3,28 +3,23 @@
   import { draw } from 'svelte/transition';
   import { select, event, mouse as d3Mouse } from 'd3-selection';
   import { line } from 'd3-shape';
-  import { scaleLinear } from 'd3-scale';
-  import { axisTop, axisLeft } from 'd3-axis';
+  import { scaleLinear, scaleTime } from 'd3-scale';
+  import { axisTop, axisRight as axisLeft } from 'd3-axis';
 
-  import { indexClosest, valuesExtent } from './utils';
-  import { IVIES } from './constants';
+  import { indexClosest } from './utils';
 
   import LineLabel from './LineLabel.svelte';
   import Tspans from './Tspans.svelte';
 
   /* Data preprocessing */
 
-  import schoolCosts from '../../data/school-costs.json';
-  import nationalData from '../../data/national-data.json';
+  import covidDataWide from '../../data/percentpositive-by-modzcta.json';
 
-  const series = [
-    ...schoolCosts.map(d => ({
-      name: d.school,
-      values: d.data.map(x => x.cost),
-    })),
-    { name: 'nat-income', values: nationalData.slice(3).map(d => d.income) },
-    { name: 'nat-cost', values: nationalData.slice(3).map(d => d.cost) },
-  ];
+  const dates = covidDataWide.map(d => new Date(d.week_ending));
+  const series = ['10027', '10031'].map(zip => ({
+    name: zip,
+    values: covidDataWide.map(d => d['PCTPOS_' + zip]),
+  }));
 
   /* Some constants */
 
@@ -41,13 +36,12 @@
 
   /* Declare and instantiate variables */
 
-  let xScale = scaleLinear().domain([2003, 2018]);
-  let yScale = scaleLinear().domain(valuesExtent(series, 1.07));
-
+  let xScale = scaleTime().domain([dates[0], dates[dates.length - 1]]);
+  let yScale = scaleLinear().domain([0, Math.max(...series.map(s => s.values).flat())]);
   let lineFn = line().defined(d => d !== undefined);
   let xAxisFn = axisTop()
     .tickPadding(TICK_PADDING)
-    .tickFormat(d => d);
+    .tickFormat('%x');
   let yAxisFn = axisLeft().tickPadding(TICK_PADDING);
 
   let gWidth, gHeight;
@@ -69,7 +63,7 @@
       .ticks(gWidth / 90);
     yAxisFn.scale(yScale).tickSize(gWidth);
 
-    lineFn = lineFn.x((_, i) => xScale(2003 + i)).y(yScale);
+    lineFn = lineFn.x((_, i) => xScale(dates[i])).y(yScale);
 
     xAxis && select(xAxis).call(xAxisFn);
     yAxis && select(yAxis).call(yAxisFn);
@@ -87,26 +81,14 @@
 
   onMount(() => {
     const svg = select(svgNode);
-    svg.on('mousemove', function() {
+    svg.on('mousemove', function () {
       event.preventDefault();
       const mouse = d3Mouse(this);
       const x = xScale.invert(mouse[0] - margin.left);
       const y = yScale.invert(mouse[1] - margin.top);
-      hoverIndex = indexClosest(visibleSeries, x, y);
+      hoverIndex = indexClosest(visibleSeries, dates, x, y);
     });
   });
-
-  /* Positioning y-axis-dependent things like blur and axis label */
-
-  let blurTransform, axisLabelTransform;
-  $: {
-    if (yAxis) {
-      const firstTick = yAxis.firstElementChild.nextElementSibling;
-      blurTransform = firstTick.getAttribute('transform');
-      const lastTick = yAxis.lastElementChild;
-      axisLabelTransform = lastTick.getAttribute('transform');
-    }
-  }
 </script>
 
 <style lang="scss">
@@ -130,44 +112,19 @@
     stroke: #02a9c0;
     stroke-width: 2;
   }
-
-  g.isIvy path {
-    stroke: #aae6ec;
-  }
 </style>
 
 <svg {width} {height} bind:this={svgNode}>
-  <defs>
-    <linearGradient id="blur-down" gradientTransform="rotate(90)">
-      <stop offset="0%" stop-color="white" stop-opacity="0" />
-      <stop offset="10%" stop-color="white" stop-opacity="0.7" />
-      <stop offset="50%" stop-color="white" stop-opacity="1" />
-    </linearGradient>
-  </defs>
-
   <g transform="translate({margin.left}, {margin.top})">
     <g bind:this={xAxis} class="axis x-axis" />
     <g
       bind:this={yAxis}
-      class="axis y-axis"
-      transform="translate({gWidth}, 0)"
-    />
-    <text y="0" class="axis-label" transform={axisLabelTransform}>
-      <Tspans x="-7" text="inflation-adjusted dollars" />
-    </text>
-    <rect
-      x="-60"
-      y="-10"
-      transform={blurTransform}
-      {width}
-      height="100"
-      fill="url('#blur-down')"
-    />
+      class="axis y-axis" />
 
     {#each visibleSeries as line, i (line.name)}
-      <g data-name={line.name} class:isIvy={IVIES.includes(line.name)}>
-        <path transition:draw={{ duration: 1200 }} d={lineFn(line.values)} />
-        <LineLabel {line} {xScale} {yScale} hovered={i === hoverIndex} />
+      <g data-name={line.name}>
+        <path transition:draw={{ duration: 1700 }} d={lineFn(line.values)} />
+        <LineLabel {line} {xScale} {yScale} {dates} hovered={i === hoverIndex} />
       </g>
     {/each}
   </g>

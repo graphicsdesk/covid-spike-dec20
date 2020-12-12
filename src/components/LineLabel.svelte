@@ -3,7 +3,7 @@
   import Tspans from './Tspans.svelte';
   import { IVIES } from './constants';
 
-  export let line, xScale, yScale, hovered;
+  export let line, xScale, yScale, hovered, dates;
 
   let lastIndex;
   $: {
@@ -13,7 +13,7 @@
     // if (line.name === 'nat-cost') lastIndex -= 2;
   }
 
-  $: x = xScale(2003 + lastIndex) + 6;
+  $: x = xScale(dates[lastIndex]) + 6;
 
   $: anchorEnd = ['nat-cost', 'Columbia'].includes(line.name);
 

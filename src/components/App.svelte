@@ -12,7 +12,7 @@
   const lineStates = [
     ['10027'],
     ['10027', '10031'],
-    ['10027', '10031', 'Columbia'],
+    ['10027', '10031' /*, 'Columbia' */],
   ];
 
   let index;
@@ -136,6 +136,5 @@
 
 <p class="lede-credit" style="max-width: {width || 1050}px">
   Interactive by
-  <a href="https://www.columbiaspectator.com/contributors/Jason-Kao/">Jason Kao</a>,
-  Graphics deputy editor.
+  <a href="https://www.columbiaspectator.com/contributors/Jason-Kao/">Jason Kao</a>
 </p>

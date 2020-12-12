@@ -13,7 +13,7 @@
     "eslint-plugin-svelte3": "^2.7.3",
     "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-svelte": "^4.0.6",
+    "parcel-plugin-svelte": "^4.0.7",
     "patch-package": "^6.2.2",
     "posthtml-expressions": "^1.4.0",
     "posthtml-include": "^1.4.3",
@@ -22,7 +22,14 @@
     "svelte-preprocess-sass": "^0.2.0"
   },
   "dependencies": {
+    "d3-array": "^2.9.1",
+    "d3-axis": "^2.0.0",
+    "d3-scale": "^3.2.3",
+    "d3-selection": "^2.0.0",
+    "d3-shape": "^2.0.0",
     "intersection-observer": "^0.10.0",
+    "just-debounce-it": "^1.1.0",
+    "scrollama": "^2.2.1",
     "text-balancer": "^1.0.5"
   },
   "browserslist": [
