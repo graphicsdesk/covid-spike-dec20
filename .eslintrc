@@ -11,5 +11,13 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": "eslint:recommended"
-}
+  "extends": "eslint:recommended",
+  "plugins": [
+    "svelte3"
+  ],
+  "overrides": [
+    {
+      "files": ["*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],}

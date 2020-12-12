@@ -1,7 +1,7 @@
 import textBalancer from 'text-balancer';
 import initiatePage from './scripts/page';
 import { intersectTop } from './scripts/utils';
-
+import './scripts/svelte.js';
 import { spectate as spectateConfig } from '../package.json';
 
 // Main page initiation

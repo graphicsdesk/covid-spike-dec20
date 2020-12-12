@@ -10,6 +10,7 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "eslint": "^7.0.0",
+    "eslint-plugin-svelte3": "^2.7.3",
     "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-svelte": "^4.0.6",

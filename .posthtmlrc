@@ -19,7 +19,12 @@
           {
             "type": "graphic",
             "value": {
-              "asset": ""
+              "asset": "covid-chart.html",
+              "steps": [
+                "10027",
+                "10031",
+                "Columbia"
+              ]
             }
           },
           {
