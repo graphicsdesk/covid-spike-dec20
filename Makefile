@@ -1,3 +1,9 @@
+data/columbia-testing.json: assets/COLUMBIA_SURVEILLANCE_TESTING_RESULTS_-_Sheet1.csv Makefile ./process/clean-columbia-results.js
+	mkdir -p data
+	csvjson $< | \
+		./process/clean-columbia-results.js > \
+		$@
+
 ZIP_CODES = 10027 10031
 
 data/percentpositive-by-modzcta.json: Makefile

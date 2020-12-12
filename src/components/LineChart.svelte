@@ -2,24 +2,29 @@
   import { onMount } from 'svelte';
   import { draw } from 'svelte/transition';
   import { select, event, mouse as d3Mouse } from 'd3-selection';
-  import { line } from 'd3-shape';
+  import { line, curveStep } from 'd3-shape';
   import { scaleLinear, scaleTime } from 'd3-scale';
-  import { axisTop, axisRight as axisLeft } from 'd3-axis';
+  import { axisTop, axisRight } from 'd3-axis';
 
   import { indexClosest } from './utils';
+  import { dateOptions } from './constants';
 
   import LineLabel from './LineLabel.svelte';
-  import Tspans from './Tspans.svelte';
 
   /* Data preprocessing */
 
   import covidDataWide from '../../data/percentpositive-by-modzcta.json';
+  import columbiaData from '../../data/columbia-testing.json';
 
   const dates = covidDataWide.map(d => new Date(d.week_ending));
   const series = ['10027', '10031'].map(zip => ({
     name: zip,
-    values: covidDataWide.map(d => d['PCTPOS_' + zip]),
+    values: covidDataWide.map(d => ({ date: new Date(d.week_ending), value: d['PCTPOS_' + zip]}))
   }));
+  series.push({
+    name: 'columbia',
+    values: columbiaData.map(d => ({ ...d, date: new Date(d.date)})).sort((a, b) => a.date - b.date)
+  });
 
   /* Some constants */
 
@@ -37,12 +42,19 @@
   /* Declare and instantiate variables */
 
   let xScale = scaleTime().domain([dates[0], dates[dates.length - 1]]);
-  let yScale = scaleLinear().domain([0, Math.max(...series.map(s => s.values).flat())]);
-  let lineFn = line().defined(d => d !== undefined);
+  let yScale = scaleLinear().domain([
+    0,
+    Math.max(...series.map(s => s.values.map(v => v.value)).flat()),
+  ]);
+
+  let lineFn = line()
+    .curve(curveStep);
   let xAxisFn = axisTop()
     .tickPadding(TICK_PADDING)
-    .tickFormat('%x');
-  let yAxisFn = axisLeft().tickPadding(TICK_PADDING);
+    .tickFormat(d => d.toLocaleDateString('en-US', dateOptions));
+  let yAxisFn = axisRight()
+    .tickPadding(TICK_PADDING)
+    .tickFormat(d => d + '%');
 
   let gWidth, gHeight;
   let xAxis, yAxis;
@@ -63,7 +75,7 @@
       .ticks(gWidth / 90);
     yAxisFn.scale(yScale).tickSize(gWidth);
 
-    lineFn = lineFn.x((_, i) => xScale(dates[i])).y(yScale);
+    lineFn = lineFn.x(d => xScale(d.date)).y(d => yScale(d.value));
 
     xAxis && select(xAxis).call(xAxisFn);
     yAxis && select(yAxis).call(yAxisFn);
@@ -117,14 +129,17 @@
 <svg {width} {height} bind:this={svgNode}>
   <g transform="translate({margin.left}, {margin.top})">
     <g bind:this={xAxis} class="axis x-axis" />
-    <g
-      bind:this={yAxis}
-      class="axis y-axis" />
+    <g bind:this={yAxis} class="axis y-axis" />
 
     {#each visibleSeries as line, i (line.name)}
       <g data-name={line.name}>
         <path transition:draw={{ duration: 1700 }} d={lineFn(line.values)} />
-        <LineLabel {line} {xScale} {yScale} {dates} hovered={i === hoverIndex} />
+        <LineLabel
+          {line}
+          {xScale}
+          {yScale}
+          {dates}
+          hovered={i === hoverIndex} />
       </g>
     {/each}
   </g>

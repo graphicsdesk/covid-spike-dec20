@@ -10,6 +10,9 @@
     will-change: transform;
     position: sticky;
     top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* -webkit-transform: translate3d(0, 0, 0); */
   }
 

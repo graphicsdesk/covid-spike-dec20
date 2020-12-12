@@ -7,3 +7,5 @@ export const IVIES = [
   'UPenn',
   'Yale',
 ];
+
+export const dateOptions = { month: 'short', day: 'numeric' };

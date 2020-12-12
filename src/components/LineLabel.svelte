@@ -10,10 +10,9 @@
     let i = line.values.length - 1;
     while (line.values[i] === undefined) i--;
     lastIndex = i;
-    // if (line.name === 'nat-cost') lastIndex -= 2;
   }
 
-  $: x = xScale(dates[lastIndex]) + 6;
+  $: x = xScale(line.values[lastIndex].date) + 6;
 
   $: anchorEnd = ['nat-cost', 'Columbia'].includes(line.name);
 
@@ -22,9 +21,7 @@
   $: duration = isIvy ? 100 : 200;
 
   const LONG_LABELS = {
-    'nat-income': 'Median U.S.\nIncome',
-    'nat-cost': 'Average cost of attendance\nfor a private college',
-    Columbia: "Columbia's cost\nof attendance",
+    columbia: "Columbia",
   };
   function longLabel(name) {
     return LONG_LABELS[name] || name;
@@ -57,7 +54,7 @@
     class:anchorEnd
     class:isColumbia={line.name === 'Columbia'}
     class:isIvy
-    y={yScale(line.values[lastIndex]) - (anchorEnd && 10)}
+    y={yScale(line.values[lastIndex].value) - (anchorEnd && 10)}
   >
     <Tspans
       {x}

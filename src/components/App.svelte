@@ -12,7 +12,7 @@
   const lineStates = [
     ['10027'],
     ['10027', '10031'],
-    ['10027', '10031' /*, 'Columbia' */],
+    ['10027', '10031' , 'columbia'],
   ];
 
   let index;
@@ -41,8 +41,8 @@
   }, 200);
 
   function assignDimensions() {
-    width = Math.min(1050, document.body.clientWidth);
-    height = window.innerHeight;
+    width = Math.min(820, document.body.clientWidth);
+    height = Math.min(820, window.innerHeight);
   }
 </script>
 

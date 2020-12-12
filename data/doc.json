@@ -1,0 +1,35 @@
+{
+  "headline": "headline",
+  "date": "October blah, 2019",
+  "byline": "By Faith Andrews O’Neal",
+  "top": [],
+  "body": [
+    {
+      "type": "text",
+      "value": "Leadin. Something to draw the reader in. Graphics is the only visuals and words desk at the Spectator."
+    },
+    {
+      "type": "text",
+      "value": "Nutgraf. What is the meat of the story? Why does this matter?"
+    },
+    {
+      "type": "graphic",
+      "value": {
+        "asset": "covid-chart.html",
+        "steps": [
+          "10027",
+          "10031",
+          "Columbia"
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": "<i>Charlotte Li is a Graphics deputy editor. She can be contacted at </i><a href=\"mailto:charlotte.li@columbiaspectator.com\"><i>charlotte.li@columbiaspectator.com</i></a><i>.</i>"
+    },
+    {
+      "type": "text",
+      "value": "<i>Jun Yi Zhang is a Graphics reporter. She can be contacted at </i><a href=\"mailto:junyi.zhang@columbiaspectator.com\"><i>junyi.zhang@columbiaspectator.com</i></a><i>.</i>"
+    }
+  ]
+}

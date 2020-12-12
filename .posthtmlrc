@@ -36,9 +36,9 @@
             "value": "<i>Jun Yi Zhang is a Graphics reporter. She can be contacted at </i><a href=\"mailto:junyi.zhang@columbiaspectator.com\"><i>junyi.zhang@columbiaspectator.com</i></a><i>.</i>"
           }
         ],
-        "headline": "The U.S. and Ivy League schools were late to respond to COVID-19.",
-        "date": "October 17, 2019",
-        "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Charlotte-Li\">Charlotte Li</a>\nEdited by <a href=\"https://www.columbiaspectator.com/contributors/Jun-Yi-Zhang\">Jun Yi Zhang</a>",
+        "headline": "headline",
+        "date": "October blah, 2019",
+        "byline": "By Faith Andrews O’Neal",
         "USE_NEWS_NAV": true,
         "USE_EYE_NAV": false,
         "USE_COVER_HED": false,
