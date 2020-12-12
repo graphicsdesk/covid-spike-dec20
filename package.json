@@ -10,11 +10,15 @@
   "devDependencies": {
     "cssnano": "^4.1.10",
     "eslint": "^7.0.0",
+    "node-sass": "^5.0.0",
     "parcel-bundler": "^1.12.4",
+    "parcel-plugin-svelte": "^4.0.6",
     "patch-package": "^6.2.2",
     "posthtml-expressions": "^1.4.0",
     "posthtml-include": "^1.4.3",
-    "sass": "^1.26.5"
+    "sass": "^1.26.5",
+    "svelte": "^3.31.0",
+    "svelte-preprocess-sass": "^0.2.0"
   },
   "dependencies": {
     "intersection-observer": "^0.10.0",
