@@ -19,17 +19,22 @@
   const dates = covidDataWide.map(d => new Date(d.week_ending));
   const series = ['10027', '10031'].map(zip => ({
     name: zip,
-    values: covidDataWide.map(d => ({ date: new Date(d.week_ending), value: d['PCTPOS_' + zip]}))
+    values: covidDataWide.map(d => ({
+      date: new Date(d.week_ending),
+      value: d['PCTPOS_' + zip],
+    })),
   }));
   series.push({
     name: 'columbia',
-    values: columbiaData.map(d => ({ ...d, date: new Date(d.date)})).sort((a, b) => a.date - b.date)
+    values: columbiaData
+      .map(d => ({ ...d, date: new Date(d.date) }))
+      .sort((a, b) => a.date - b.date),
   });
 
   /* Some constants */
 
   const TICK_PADDING = 11;
-  const margin = { top: 45, right: 73, bottom: 45 };
+  const margin = { top: 45, right: 73, bottom: 7 };
   margin.left = TICK_PADDING * 2 + 13; // padding on both sides + label width
   margin.top += TICK_PADDING * 2 + 19 + 2; // padding + label height + some more
 
@@ -41,17 +46,23 @@
 
   /* Declare and instantiate variables */
 
-  let xScale = scaleTime().domain([dates[0], series[2].values[series[2].values.length - 1].date]);
+  let xScale = scaleTime().domain([
+    dates[0],
+    series[2].values[series[2].values.length - 1].date,
+  ]);
   let yScale = scaleLinear().domain([
     0,
     Math.max(...series.map(s => s.values.map(v => v.value)).flat()),
   ]);
 
-  let lineFn = line()
-    .curve(curveStep);
+  let lineFn = line().curve(curveStep);
   let xAxisFn = axisTop()
     .tickPadding(TICK_PADDING)
-    .tickFormat((d, i) => (i > 0 ? '' : 'Week ending in ') + d.toLocaleDateString('en-US', dateOptions));
+    .tickFormat(
+      (d, i) =>
+        (i > 0 ? '' : 'Week ending in ') +
+        d.toLocaleDateString('en-US', dateOptions),
+    );
   let yAxisFn = axisRight()
     .tickPadding(TICK_PADDING)
     .tickFormat(d => d + '%');
@@ -116,13 +127,20 @@
     stroke-linejoin: round;
     stroke-linecap: round;
     fill: none;
-    stroke: #34495e;
+    stroke: #70879e;
     stroke-width: 1.5;
   }
 
-  g[data-name='Columbia'] path {
-    stroke: #02a9c0;
-    stroke-width: 2;
+  g[data-name='columbia'] path {
+    stroke: #71536f;
+  }
+
+  .caption {
+    font-size: 14px;
+    font-family: Georgia;
+    color: #666;
+    margin: 7px auto 0;
+    line-height: 1.3;
   }
 </style>
 
@@ -144,3 +162,11 @@
     {/each}
   </g>
 </svg>
+<!-- 
+<p
+  class="caption"
+  style="width: {width}px; transform: translateX({margin.left}px);">
+  Visualization by
+  <a href="https://www.columbiaspectator.com/contributors/Jason-Kao/">Jason Kao</a>.
+</p>
+ -->

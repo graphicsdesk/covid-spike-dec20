@@ -1,5 +1,5 @@
 <if condition="item.value['caption-overlay']">
-  <div class="image width-{{ item.value.width }}">
+  <div class="image width-{{ item.value.width || 'auto'}}">
     <div class="overlay-container">
       <img src="{{ item.value.asset }}" />
       <div class="image-overlay" id="overlay">
@@ -14,11 +14,11 @@
 </if>
 
 <else>
-  <div class="image width-{{ item.value.width }}">
+  <div class="image width-{{ item.value.width || 'full-width' }}">
     <img src="{{ item.value.asset }}" />
     <if condition="item.value.caption">
       <p class="image-caption-text">
-        {{ item.value.caption }}
+        {{{ item.value.caption }}}
         <!--
         <span class="image-credit">
           Photography by {{ item.value.credit}}

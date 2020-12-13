@@ -30,7 +30,7 @@
 
 <style>
   text {
-    fill: #121212;
+    fill: #70879E;
     font-size: 16px;
   }
 
@@ -39,11 +39,7 @@
   }
 
   .isColumbia {
-    fill: #02a9c0;
-  }
-
-  .isIvy {
-    fill: #aae6ec;
+    fill: #71536F;
   }
 </style>
 
@@ -52,8 +48,7 @@
     in:fade={{ duration, delay: isIvy && hovered ? 0 : 1700 }}
     out:fade={{ duration }}
     class:anchorEnd
-    class:isColumbia={line.name === 'Columbia'}
-    class:isIvy
+    class:isColumbia={line.name === 'columbia'}
     y={yScale(line.values[lastIndex].value) - (anchorEnd && 10)}>
     <Tspans
       {x}
