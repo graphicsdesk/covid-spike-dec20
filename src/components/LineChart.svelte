@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { draw } from 'svelte/transition';
   import { select, event, mouse as d3Mouse } from 'd3-selection';
-  import { line, curveStep } from 'd3-shape';
+  import { line, curveStepBefore as curveStep } from 'd3-shape';
   import { scaleLinear, scaleTime } from 'd3-scale';
   import { axisTop, axisRight } from 'd3-axis';
 
@@ -29,8 +29,8 @@
   /* Some constants */
 
   const TICK_PADDING = 11;
-  const margin = { top: 20, right: 100, bottom: 40 };
-  margin.left = TICK_PADDING * 2 + 43; // padding on both sides + label width
+  const margin = { top: 45, right: 73, bottom: 45 };
+  margin.left = TICK_PADDING * 2 + 13; // padding on both sides + label width
   margin.top += TICK_PADDING * 2 + 19 + 2; // padding + label height + some more
 
   /* Props */
@@ -41,7 +41,7 @@
 
   /* Declare and instantiate variables */
 
-  let xScale = scaleTime().domain([dates[0], dates[dates.length - 1]]);
+  let xScale = scaleTime().domain([dates[0], series[2].values[series[2].values.length - 1].date]);
   let yScale = scaleLinear().domain([
     0,
     Math.max(...series.map(s => s.values.map(v => v.value)).flat()),
@@ -51,7 +51,7 @@
     .curve(curveStep);
   let xAxisFn = axisTop()
     .tickPadding(TICK_PADDING)
-    .tickFormat(d => d.toLocaleDateString('en-US', dateOptions));
+    .tickFormat((d, i) => (i > 0 ? '' : 'Week ending in ') + d.toLocaleDateString('en-US', dateOptions));
   let yAxisFn = axisRight()
     .tickPadding(TICK_PADDING)
     .tickFormat(d => d + '%');

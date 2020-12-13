@@ -10,7 +10,7 @@ function calculatePercentPositive(d) {
     if (key.includes('Tested')) tests += d[key];
     if (key.includes('Positive')) positives += d[key];
   });
-  return (positives / tests) * 100;
+  return positives / tests;
 }
 
 const data = JSON.parse(stdinBuffer.toString()).map(d => ({

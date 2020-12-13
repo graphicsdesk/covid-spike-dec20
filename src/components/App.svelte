@@ -21,7 +21,7 @@
     scroller
       .setup({
         step: '.step',
-        offset: 0.7,
+        offset: 0.75,
       })
       .onStepEnter(response => {
         index = response.index;
@@ -95,20 +95,6 @@
     }
   }
 
-  .lede-credit {
-    font-size: 15px;
-    font-family: Georgia, serif;
-    color: #888;
-    margin: 7px auto 0;
-    line-height: 1.3;
-    z-index: 2;
-    position: relative;
-
-    a {
-      color: #888;
-    }
-  }
-
   @media (max-width: 1050px) {
     .lede-credit {
       padding: 0 10px;
@@ -133,8 +119,3 @@
     {/each}
   </div>
 </Scroller>
-
-<p class="lede-credit" style="max-width: {width || 1050}px">
-  Interactive by
-  <a href="https://www.columbiaspectator.com/contributors/Jason-Kao/">Jason Kao</a>
-</p>

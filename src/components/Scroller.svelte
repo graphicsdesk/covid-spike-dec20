@@ -2,14 +2,14 @@
 
 </script>
 
-<style>
+<style lang="scss">
   scroller-background {
     display: block;
     width: 100%;
-    height: 95%;
+    height: 100%;
     will-change: transform;
     position: sticky;
-    top: 0;
+    top: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;

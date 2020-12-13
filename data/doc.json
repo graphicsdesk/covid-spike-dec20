@@ -1,35 +1,166 @@
 {
-  "headline": "headline",
-  "date": "October blah, 2019",
-  "byline": "By Faith Andrews O’Neal",
-  "top": [],
+  "headline": "tk",
+  "date": "December 13, 2020",
+  "byline": "By <a href=\"https://www.columbiaspectator.com/contributors/Faith-Andrews/\">Faith Andrews O’Neal</a>",
   "body": [
     {
       "type": "text",
-      "value": "Leadin. Something to draw the reader in. Graphics is the only visuals and words desk at the Spectator."
-    },
-    {
-      "type": "text",
-      "value": "Nutgraf. What is the meat of the story? Why does this matter?"
+      "value": "In New York City, COVID-19 cases are risinghave been on the rise, with the city breaching its 550 case threshold on October 26th for the first time in months. As seen across the country, working class people of color have faced the brunt of the pandemic, from health vulnerability and deaths, to unemployment."
     },
     {
       "type": "graphic",
       "value": {
         "asset": "covid-chart.html",
         "steps": [
-          "10027",
-          "10031",
-          "Columbia"
+          "In the zipcode that Morningside Heights and Columbia occupies (10027), the positivity rate is 2.41% as of December 2nd.",
+          "For West Harlem residents in the 10031 zipcode, the positivity rate is more than twice that at 5.19%.",
+          "On Columbia’s campus, the positivity rate is 0.29%, just a fraction of that in the broader area."
         ]
       }
     },
     {
       "type": "text",
-      "value": "<i>Charlotte Li is a Graphics deputy editor. She can be contacted at </i><a href=\"mailto:charlotte.li@columbiaspectator.com\"><i>charlotte.li@columbiaspectator.com</i></a><i>.</i>"
+      "value": "The low positivity rates can in part be traced to Columbia’s rigorous testing program, in which all university affiliates who frequent the campus are required to undergo free weekly testing. Erick Zent CC ‘24 and first-year class president, says the testing is very accessible for Columbia affiliateseveryone who wishwishes to utilize it."
     },
     {
       "type": "text",
-      "value": "<i>Jun Yi Zhang is a Graphics reporter. She can be contacted at </i><a href=\"mailto:junyi.zhang@columbiaspectator.com\"><i>junyi.zhang@columbiaspectator.com</i></a><i>.</i>"
+      "value": "“It’s actually really easy to get the test,” Zent said. “All you have to do is go to the Columbia University Health corner portal and then make an appointment.”"
+    },
+    {
+      "type": "text",
+      "value": "Zent, who is currently on campus, said that it is a mixture of the weekly testing and the “stringent” enforcement of rules laid out in the COVID-19 compactthe rules on behalf of the RAs that have accounted for this low positivity rate."
+    },
+    {
+      "type": "text",
+      "value": "“Honestly sometimes it’s gratuitous but it’s worked clearly–the positivity rates are super low,” Zent said.. “We can’t do a lot of things, and that’s had effects on mental health, but nobody’s dying of COVID.”"
+    },
+    {
+      "type": "text",
+      "value": "While this is good news for Columbia, looking outside the university’s gates shows a different story for West Harlem and Morningside Heights residents. Erick believes that the commitment Columbia made with the Community Board Association should extend to giving resources to the Morningside Heights and West Harlem area."
+    },
+    {
+      "type": "text",
+      "value": "“In 2009, Columbia signed [the]with CBA in order to create Manhattanville,” Zent said. “They explicitly made a commitment to help the community and the surrounding area.”"
+    },
+    {
+      "type": "text",
+      "value": "[I wonder if there’s any grafs we can add about the ways in which the CBA is incredibly limiting and can’t/won’t really adapt to conditions / increasing the already pretty low amount of money it’s offering. That might already be another story -- but angle needs to be more nuanced than “oh Columbia signed CBA and should give more $$ bc they signed the CBA” -- that’s not exactly how it works]"
+    },
+    {
+      "type": "text",
+      "value": "Wil Lieberman-Cribbin is a first-year doctoral student in Environmental Health Sciences at Columbia and the Melman school of public health. His team analyzed public data from the New York State Department of Health from the first recorded month of the pandemic and noted the disparities in testing along racial and socioeconomic lines."
+    },
+    {
+      "type": "text",
+      "value": "“We were really interested in investigating if testing was performed in areas that were proportional to need,” Lieberman-Cribbin said."
+    },
+    {
+      "type": "text",
+      "value": "Lieberman-Cribbin’s research team studied the distribution of testing and positive test results across 177 zip code tabulation areas. They then calculated a Socioeconomic Score (SES), which he described as a “weighted measure of multiple variables such as household income, rent amount, whether the population lives in apartments, education, unemployment, and crowdedness of area” along with other factors."
+    },
+    {
+      "type": "text",
+      "value": "“The main result of what we found is that more tests were performed in areas with an increasingly white racial composition,” Lieberman-Cribbin said. “And then conversely, areas that had the highest proportion of positive tests were in mostly non-white neighborhoods and in areas that had a lower SES, so that that was the main result.”"
+    },
+    {
+      "type": "text",
+      "value": "What the research depicted was a difference in approach to testing in neighborhoods with different SES scores. Residents in neighborhoods with higher SES scores were more likely to go get tested as a preventative, or screening measure. Those in neighborhoods with lower scores were more likely to use testing as a diagnostic tool. While his initial research may have only been centered around the recorded data from March 2nd to April 6th, Lieberman-Cribbin’s team is still noticing a disproportionate lack of testing in low-SES areas."
+    },
+    {
+      "type": "text",
+      "value": "“We still found that there was more tests regardless in more well off areas like Manhattan compared to Central queens and that the opposite was true for positive results,” Lieberman-Cribbin said..”"
+    },
+    {
+      "type": "text",
+      "value": "Edwin Torres, a co-chair of the Health and Environment committee on Community Board 9 a health and environment co-chair for Community Board 9CB9 and a nurse practitioner at Montefiore Medical Center, also believes that Columbia has a role to play within the West Harlem community. He describes what he believes is a chance for a “symbiotic relationship” between West Harlem and Columbia."
+    },
+    {
+      "type": "text",
+      "value": "“What is done for the West Harlem community also benefits the university,” Torres said. “Because if cases are low, then that means a student's chances of getting COVID is low, and they can come back and be at the campus or be in the community.”"
+    },
+    {
+      "type": "text",
+      "value": "Torres would like to see Columbia utilize some of their real estate (such as the Jerome Green Science Center) to create centralized testing facilities for residents to receive testing as a part of this community."
+    },
+    {
+      "type": "text",
+      "value": "“That will be something that will help in this effort,” Torres said. “This is the definition of a community.”"
+    },
+    {
+      "type": "text",
+      "value": "Torres believes that the high positivity rates within West Harlem are due in large part to a lack of access to community resources for testing."
+    },
+    {
+      "type": "text",
+      "value": "“What I hear in the community is that we need more testing centers,” Torres said. “We need a testing center to be here in the community, and we’re working with the health department to see how we can create spaces that can be more accessible for the community.”"
+    },
+    {
+      "type": "text",
+      "value": "There are multiple hospitals in the surrounding area that makes up CB9, Mount Sinai and CUMC/New York-Presbyterian hospital (which Torres refers to as “168”). However, despite the hospitals’ presence in the area, residents are still wary of going to the hospitals, as they recall the state of disarray that took place when the virus first hit in early spring this year."
+    },
+    {
+      "type": "text",
+      "value": "“We know that hospitals are doing a great job at providing some of these resources but we also need to understand the fear that the community has,” Torres said. “If you build it, and they don't come then you build it for nothing.”"
+    },
+    {
+      "type": "text",
+      "value": "As such, to accommodate for the community’s skepticism towards hospitals at the moment, and other CB9 members have monthly meetings with the Department of Health and continue to push for more resources directly in the community."
+    },
+    {
+      "type": "text",
+      "value": "“Hospitals that have done a terrific job implementing protocols to make sure that their ERs are safe and that their facilities are safe,” Torres said.  “Bbut the population doesn't want to go there. So we need to make sure we come to the population.”"
+    },
+    {
+      "type": "text",
+      "value": "He described the popularity of the City MD located on 146th and Broadway as an example of the efficacy of in-community testing centers."
+    },
+    {
+      "type": "text",
+      "value": "“There's a huge line every day,” Torres said. “People prefer to go to places like that because they just feel that this is a safer place than attending a hospital.”"
+    },
+    {
+      "type": "text",
+      "value": "As temperatures begin to chill, many scientists have predicted that cases will rise as flu season begins and the general population waits for a vaccine to be distributed. Looking forward, Torres is focused on ensuring that West Harlem residents stay safe this winter."
+    },
+    {
+      "type": "text",
+      "value": "“Now, as with a typical year in New York City, we're seeing the cold weather is kicking in,” Torres said. “People now, they tend to be inside. And we need to be very vigilant with our community to make sure that we don't repeat what happened back in March.”"
+    },
+    {
+      "type": "text",
+      "value": "Elsia Vasquez is the founder of P.A.’L.A.N.T.E. Harlem, an organization whose acronym stands for People Against Landlord Abuse and Tenant Exploitation. She describes her client make up as “majority Black and Brown”, and noted that they seemed to face the brunt of the pandemic, from health concerns to unemployment."
+    },
+    {
+      "type": "text",
+      "value": "“I would say that 50 to 55% of our clients have contracted the virus,” Vasquez said. “Thank God most of them have survived, but the double down and triple down in one apartment being incurred upon definitely has an impact.”"
+    },
+    {
+      "type": "text",
+      "value": "Although Vasquez’s work has historically been centered around tenant advocacy, once COVID-19 hit her organization adjusted in order to best support the communities they serve. This has meant opening the office 7 days a week, and adding services that provide much-needed PPE for tenants in all different boroughs."
+    },
+    {
+      "type": "text",
+      "value": "Vasquez described a story of a woman in the Bronx whose husband passed away because he could not wear a mask at work, as well as people lining up for their Thanksgiving turkey drives with visibility dirty masks because they could not afford to purchase duplicates."
+    },
+    {
+      "type": "text",
+      "value": "“Getting those guys PPE, that’s what’s important for us right now,” Vasquez said."
+    },
+    {
+      "type": "text",
+      "value": "Her service in providing masks and hand sanitizer for this population has led her to working with the mayor and governor’s office to gather more resources, as well as the tenants themselves in the community to distribute the resources directly to residents."
+    },
+    {
+      "type": "text",
+      "value": "“We have a lot of tenants’ associations in Morningside Heights and West Harlem,” Vasquez said. “ {For} the tenants’ organizations that we’ve already built in the community, we get the leaders involved, and when it comes to the different buildings that we know are in the community we just go there.”"
+    },
+    {
+      "type": "text",
+      "value": "Vasquez has seen rising COVID rates result in a loss of employment, thus income, for residents, and works with the tenants to ensure their landlords are not being predatory in the midst of the pandemic. Her work has led P.A.’L.A.N.T.E.  to partner with the Robin Hood Foundation and the New York Community Trust to create “COVID rent relief grants” that pay landlords $1000 towards tenants’ rents with a caveat that they are able to ensure that the tenants are being treated fairly during this difficult time. In spite of all of this, she still feels like there is work to be done to help alleviate the effects of COVID-19 on Harlem residents."
+    },
+    {
+      "type": "text",
+      "value": "“I know that more can be done simply because the numbers continue to grow,” Vasquez said. People continue to get sick.”"
     }
   ]
 }

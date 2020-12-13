@@ -49,4 +49,8 @@ $grid-color: #ddd;
       stroke-width: 10;
     }
   }
+
+  .y-axis .tick:nth-child(2) line {
+    stroke: #444;
+  }
 }
