@@ -5,8 +5,6 @@
   import scrollama from 'scrollama';
   import debounce from 'just-debounce-it';
 
-  import { IVIES } from './constants';
-
   export let steps;
 
   const lineStates = [

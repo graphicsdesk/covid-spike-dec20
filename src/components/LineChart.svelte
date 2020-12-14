@@ -34,7 +34,7 @@
   /* Some constants */
 
   const TICK_PADDING = 11;
-  const margin = { top: 45, right: 73, bottom: 7 };
+  const margin = { top: 45, right: 73, bottom: 30 };
   margin.left = TICK_PADDING * 2 + 13; // padding on both sides + label width
   margin.top += TICK_PADDING * 2 + 19 + 2; // padding + label height + some more
 
@@ -127,12 +127,12 @@
     stroke-linejoin: round;
     stroke-linecap: round;
     fill: none;
-    stroke: #70879e;
+    stroke: #608cb8;
     stroke-width: 1.5;
   }
 
   g[data-name='columbia'] path {
-    stroke: #71536f;
+    stroke: #8a5486;
   }
 
   .caption {
